@@ -11,7 +11,7 @@ This is a work-in-progress. This repo helps in setting up of ...
 5. Deploy Watson Machine Learning
 6. Deploy Watson Discovery (coming)
 
-As a prerequisite of using these scripts; you must have deployed CP4D using either the Catalog method from the IBM Cloud, or manually via the command line. This repo is applicable towards CP4D install on ROKS using File/Block storage. It does not cover Sofware Defined Storage (Portworx, OCS, etc).
+As a prerequisite of using these scripts; you must have deployed CP4D using <del>either the Catalog method from the IBM Cloud</del>, or manually via the command line. This repo is applicable towards CP4D install on ROKS using File/Block storage. It does not cover Sofware Defined Storage (Portworx, OCS, etc).
 
 ### Procedure to step through the scripts.
 
