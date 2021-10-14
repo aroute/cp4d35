@@ -17,7 +17,7 @@ As a prerequisite of using these scripts; you must have deployed CP4D using <del
 
 1. Git clone the repo.
 2. `cat` (read) each and every file - in sequence - before running; look for comments to understand if you need to provide any additional arguments. Patch documentation is [here](https://www.ibm.com/support/pages/available-patches-ibm-cloud-pak-data#3.5.2).
-3. Bring your own `repo.yaml` file with the entitlement key: follow [this](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/cpd/install/installation-files.html) official guide to set up your repo.yaml file with your own API key.
+3. Bring your own `repo.yaml` file with the entitlement key: follow this](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=tasks-obtaining-installation-files) official guide to set up your repo.yaml file with your own API key.
 
 Contact aali@us.ibm.com for questions or Slack [@aali](https://ibm.enterprise.slack.com/user/@W54KBUZ34).
 
