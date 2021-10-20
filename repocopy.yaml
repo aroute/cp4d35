@@ -1,0 +1,83 @@
+---
+fileservers:
+  - 
+    url: "https://raw.github.com/IBM/cloud-pak/master/repo/cpd/3.5"
+registry:
+  - 
+    url: cp.icr.io/cp/cpd
+    name: base-registry
+    namespace: ""
+    username: cp
+    apikey: enter_api_key
+
+# Watson Assistant
+  - url: cp.icr.io
+    username: cp
+    apikey: enter_api_key
+    namespace: "cp/watson-assistant"
+    name: wa-registry
+  - url: cp.icr.io
+    username: cp
+    apikey: enter_api_key
+    namespace: "cp/watson-assistant"
+    name: wa-registry-operator
+  # ElasticSearch
+  - url: cp.icr.io
+    username: cp
+    apikey: enter_api_key
+    namespace: "cp"
+    name: elasticsearch-registry
+  # Etcd
+  - url: cp.icr.io
+    username: cp
+    apikey: enter_api_key
+    namespace: "cp"
+    name: entitled-registry
+  # Gateway, Redis, Minio, ElasticSearch
+  - url: cp.icr.io
+    username: cp
+    apikey: enter_api_key
+    namespace: "cp"
+    name: prod-entitled-registry
+  # For EDB operator
+  - url: cp.icr.io
+    username: cp
+    apikey: enter_api_key
+    namespace: "cp/cpd"
+    name: databases-registry
+  - url: cp.icr.io/cp
+    username: cp
+    apikey: enter_api_key
+    name: voice-gateway
+  # ModelTrain Classic
+  - url: cp.icr.io
+    username: cp
+    apikey: enter_api_key
+    namespace: cp/modeltrain
+    name: modeltrain-classic-registry
+#  Discovery
+  - url: cp.icr.io
+    username: cp
+    apikey: enter_api_key
+    namespace: cp/watson-discovery
+    name: watson-discovery-registry
+  - url: cp.icr.io
+    username: cp
+    apikey: enter_api_key
+    namespace: "cp/knowledge-studio"
+    name: wks-registry
+  - url: cp.icr.io
+    username: cp
+    apikey: enter_api_key
+    namespace: cp/watson-lt
+    name: lt-registry
+  - url: cp.icr.io
+    username: cp
+    apikey: enter_api_key
+    namespace: cp/watson-speech
+    name: spch-registry
+  - url: cp.icr.io
+    username: cp
+    apikey: enter_api_key
+    namespace: "cp/edge"
+    name: edge-analytics
