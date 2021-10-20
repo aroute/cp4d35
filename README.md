@@ -1,3 +1,6 @@
+# Deploy Cloud Pak for Data 3.5 (CP4D) on IBM Cloud ROKS OpenShift
+
+## Log in
 
 1. Git clone this repository
 ```shell
@@ -9,62 +12,74 @@ git clone https://github.com/aroute/cp4d35.git
 oc login ...
 ```
 
-3. Increase the persistent storage for registry, if not done already.
+## Pre-requisite
 
-4. Activate the registry.
+1. Increase the persistent storage for registry, if not done already.
+
+2. Activate the registry.
 ```shell
 cd cp4d35/
 ./registry.sh
 ```
 
-5. Tune/optimize nodes 
+3. Tune/optimize nodes 
 ```shell
 oc create -f setkernelparams.yaml
 ```
 
-6. Enable NFS file permission by running.
+4. Enable NFS file permission by running.
 ```shell
 oc create -f norootsquash.yaml
 ```
 
-7. Get `cpd-cli` utility.
+5. Get `cpd-cli` utility.
 ```shell
 ./01cli.sh
 ```
 
-8. Update the default repo.yaml file by inserting your entitlement key. The key is available via [Container software library on My IBM](https://myibm.ibm.com/products-services/containerlibrary). Source: [Obtaining the installation files](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=tasks-obtaining-installation-files).
+6. Update the default repo.yaml file by inserting your entitlement key. The key is available via [Container software library on My IBM](https://myibm.ibm.com/products-services/containerlibrary). Source: [Obtaining the installation files](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=tasks-obtaining-installation-files).
 
-8.1. Create a variable for your entitlement key.
+6.1. Create a variable for your entitlement key.
 ```shell
 export entitlement_key=eyJhbGcxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-8.2. Populate your api key into `repocopy.yaml` file.
+6.2. Populate your api key into `repocopy.yaml` file.
 ```shell
 sed -i 's/enter_api_key/'"$entitlement_key"'/g' repocopy.yaml
 ```
 
-8.3. Replace `repo.yaml` file.
+6.3. Replace `repo.yaml` file.
 ```shell
 rm repo.yaml && mv repocopy.yaml repo.yaml
 ```
 
-UPDATED: September 23, 2021
+## Deploy
 
-NOTE: The IBM's Catalog method no longer provides Terraform scripted install of CP4D 3.5. 
+### Watson Studio
 
-This is a work-in-progress. This repo helps in setting up of ...
+📌 Note that the deployment of Watson Studio will also deploy the required lite assembly. Proceed in sequence.
 
-1. Cloud Pak for Data CLIs
-2. Deploy DB2 Warehouse
-3. Deploy Watson Studio
-4. Deploy Watson Machine Learning
-5. Deploy Watson Discovery
+1. Prepare/Deploy **Watson Studio**
+```shell
+./02wslprepare.sh
+```
+1.1. Choose and select only one storage class. If you provisioned OpenShift cluster at Technology Zone with NFS, then select `managed-nfs-storage`. 
+```shell
+export storageclass=ibmc-file-gold-gid
+export storageclass=managed-nfs-storage
+```
+1.2. Deploy
+```shell
+./03wsldeploy.sh
+```
 
-This repo is applicable towards CP4D install on ROKS using File/Block storage. It does not cover Sofware Defined Storage (Portworx, OCS, etc).
+⏰ 1 - 2 hours.
 
-Patch documentation is [here](https://www.ibm.com/support/pages/available-patches-ibm-cloud-pak-data#3.5.2).
+## DB2 Warehouse
 
-Contact aali@us.ibm.com for questions or Slack [@aali](https://ibm.enterprise.slack.com/user/@W54KBUZ34).
+```shell
+./02db2wdeploy.sh
+```
 
-primary purpose: automate the enablement
+⏰ 30 minutes.
