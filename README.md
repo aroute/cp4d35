@@ -66,7 +66,7 @@ export storageclass=managed-nfs-storage
 ```
 ⏰ 30 minutes.
 
-## DB2 Warehouse
+### DB2 Warehouse
 ```shell
 ./01db2wdeploy.sh
 ```
@@ -78,19 +78,19 @@ export storageclass=managed-nfs-storage
 ```
 ⏰ 1 - 2 hours.
 
-## Watson Machine Learning
+### Watson Machine Learning
 ```shell
 ./03wmlwdeploy.sh
 ```
 ⏰ 1 - 2 hours.
 
-## EDB Operator
+### EDB Operator
 ```shell
 ./04edbdeploy.sh
 ```
 ⏰ 30 minutes.
 
-## Watson Discovery
+### Watson Discovery
 
 📌 Note: Watson Discovery uses Block Gold storage.
 
