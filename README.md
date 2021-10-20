@@ -54,15 +54,7 @@ sed -i 's/enter_api_key/'"$entitlement_key"'/g' repocopy.yaml
 rm repo.yaml && mv repocopy.yaml repo.yaml
 ```
 
-## Deploy
-
-### Watson Studio
-
-📌 Note that the deployment of Watson Studio will also deploy the required lite assembly. Proceed in sequence.
-
-#### Storageclass
-
-Choose and select only one storage class. If you provisioned OpenShift cluster at Technology Zone with NFS, then select `managed-nfs-storage`. 
+7. Choose and select only one of the two storage classes. If you provisioned OpenShift cluster at Technology Zone with NFS, then select `managed-nfs-storage`; otherwise, select `ibmc-file-gold-gid`. 
 ```shell
 export storageclass=ibmc-file-gold-gid
 ```
@@ -71,25 +63,44 @@ OR
 export storageclass=managed-nfs-storage
 ```
 
-1. Deploy WSL
-```shell
-./01wsldeploy.sh
-```
+## Deploy
 
-⏰ 1 - 2 hours.
+### Lite Assembly (base)
+```shell
+./00lite.sh 
+```
 
 ## DB2 Warehouse
-
 ```shell
-./02db2wdeploy.sh
+./01db2wdeploy.sh
 ```
-
 ⏰ 30 minutes.
 
-## Watson Machine Learning
+### Watson Studio
+```shell
+./02wsldeploy.sh
+```
+⏰ 1 - 2 hours.
 
+## Watson Machine Learning
 ```shell
 ./03wmlwdeploy.sh
 ```
-
 ⏰ 1 - 2 hours.
+
+## EDB Operator
+```shell
+./04edbdeploy.sh
+```
+⏰ 30 minutes.
+
+## Watson Discovery
+
+📌 Note: Watson Discovery uses Block Gold storage.
+
+```shell
+./05discoverydeploy.sh
+```
+⏰ 1 - 2 hours.
+
+
