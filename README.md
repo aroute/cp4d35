@@ -67,6 +67,8 @@ export storageclass=managed-nfs-storage
 
 ## Deploy
 
+📌 Note: These scripts will install CP4D in a `zen` project.
+
 ### Lite Assembly (base)
 ```shell
 ./00lite.sh 
