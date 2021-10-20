@@ -27,14 +27,14 @@ cd cp4d35/
 oc create -f setkernelparams.yaml
 ```
 
-4. Enable NFS file permission by running.
+4. Enable NFS file permission
 ```shell
 oc create -f norootsquash.yaml
 ```
 
 5. Get `cpd-cli` utility.
 ```shell
-./01cli.sh
+./cli.sh
 ```
 
 6. Update the default repo.yaml file by inserting your entitlement key. The key is available via [Container software library on My IBM](https://myibm.ibm.com/products-services/containerlibrary). Source: [Obtaining the installation files](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=tasks-obtaining-installation-files).
@@ -60,18 +60,15 @@ rm repo.yaml && mv repocopy.yaml repo.yaml
 
 📌 Note that the deployment of Watson Studio will also deploy the required lite assembly. Proceed in sequence.
 
-1. Prepare/Deploy **Watson Studio**
-```shell
-./02wslprepare.sh
-```
-1.1. Choose and select only one storage class. If you provisioned OpenShift cluster at Technology Zone with NFS, then select `managed-nfs-storage`. 
+Choose and select only one storage class. If you provisioned OpenShift cluster at Technology Zone with NFS, then select `managed-nfs-storage`. 
 ```shell
 export storageclass=ibmc-file-gold-gid
 export storageclass=managed-nfs-storage
 ```
-1.2. Deploy
+
+1. Deploy WSL
 ```shell
-./03wsldeploy.sh
+./01wsldeploy.sh
 ```
 
 ⏰ 1 - 2 hours.
