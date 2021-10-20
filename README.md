@@ -25,9 +25,15 @@ cd cp4d35/
 ./registry.sh
 ```
 
-3. Tune/optimize nodes and set NFS permissions
+3. Tune/optimize nodes and set NFS permissions. Get your entitlement key via [Container software library on My IBM](https://myibm.ibm.com/products-services/containerlibrary). Source: [Obtaining the installation files](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=tasks-obtaining-installation-files).
 ```shell
-oc create -f setkernelparams.yaml norootsquash.yaml -n kube-system
+export entitlement_key=eyJhbGcxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+```shell
+sed -i 's/enter_api_key/'"$entitlement_key"'/g' tune.sh
+```
+```shell
+./tune.sh
 ```
 
 4. Get `cpd-cli` utility.
@@ -35,9 +41,7 @@ oc create -f setkernelparams.yaml norootsquash.yaml -n kube-system
 ./cli.sh
 ```
 
-5. Update the default repo.yaml file by inserting your entitlement key. The key is available via [Container software library on My IBM](https://myibm.ibm.com/products-services/containerlibrary). Source: [Obtaining the installation files](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=tasks-obtaining-installation-files).
-
-6. Create a variable for your entitlement key.
+5. Update the default repo.yaml file by inserting your entitlement key. Create a variable for your entitlement key.
 ```shell
 export entitlement_key=eyJhbGcxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
