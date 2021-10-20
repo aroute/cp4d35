@@ -14,7 +14,10 @@ oc login ...
 
 ## Pre-requisite
 
-1. Increase the persistent storage for registry, if not done already.
+1. Increase the persistent storage for registry, if not done already. DO NOT use this script for cluster provisioned via Tech Zone.
+```shell
+./modifyVol.sh
+```
 
 2. Activate the registry.
 ```shell
