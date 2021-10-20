@@ -27,7 +27,7 @@ cd cp4d35/
 
 3. Tune/optimize nodes and set NFS permissions
 ```shell
-oc create -f setkernelparams.yaml norootsquash.yaml
+oc create -f setkernelparams.yaml norootsquash.yaml -n kube-system
 ```
 
 4. Get `cpd-cli` utility.
