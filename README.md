@@ -60,9 +60,14 @@ rm repo.yaml && mv repocopy.yaml repo.yaml
 
 📌 Note that the deployment of Watson Studio will also deploy the required lite assembly. Proceed in sequence.
 
+#### Storageclass
+
 Choose and select only one storage class. If you provisioned OpenShift cluster at Technology Zone with NFS, then select `managed-nfs-storage`. 
 ```shell
 export storageclass=ibmc-file-gold-gid
+```
+OR
+```shell
 export storageclass=managed-nfs-storage
 ```
 
@@ -80,3 +85,11 @@ export storageclass=managed-nfs-storage
 ```
 
 ⏰ 30 minutes.
+
+## Watson Machine Learning
+
+```shell
+./03wmlwdeploy.sh
+```
+
+⏰ 1 - 2 hours.
