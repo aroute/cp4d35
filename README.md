@@ -69,7 +69,7 @@ export storageclass=managed-nfs-storage
 
 📌 Note: These scripts will install CP4D in a `zen` project.
 
-### Lite Assembly (base)
+### Lite Assembly (control plane)
 ```shell
 ./00lite.sh 
 ```
@@ -106,6 +106,52 @@ export storageclass=managed-nfs-storage
 ```shell
 ./05discoverydeploy.sh
 ```
-⏰ 1 - 2 hours.
+⏰ 2+ hours.
+
+## Patches/upgrades
+
+At the time of the writing, only two of the assemblies require patches: `modeltrain-classic` and `watson-discovery`. 
+
+First, check for available patches:
+```shell
+./cpd-cli status --repo ./repo.yaml --namespace zen --patches --available-updates
+```
+Scroll up and look for available patches in the following section:
+```console
+  Patch availability check:
+
+    No info on available patches has been found
+```
+Apply the two available patches.
+```shell
+./patch_modeltrain.sh
+```
+```shell
+./patch_discovery.sh
+```
+Re-run and check to ensure patches have been applied.
+```shell
+./cpd-cli status --repo ./repo.yaml --namespace zen --patches --available-updates
+```
+
+## Troubleshooting
+
+1. The `wd-discovery-ranker-*` keeps failing.
+
+### Resolution
+
+Resolution provided by IBM support.
+```
+oc edit deployment/wd-discovery-ranker-monitor-agent
+```
+a. Update the `initialDelaySeconds` value in `LivenessProbe` to `15`
+b. Update the `initialDelaySeconds` in `ReadinessProbe` to `45`
+
+2. How do I check the status of all the assemblies?
+
+Run the following script to check the status of the control plane, and all the deployed assemblies.
+```shell
+./statusall.sh
+```
 
 
