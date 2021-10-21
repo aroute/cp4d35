@@ -1,4 +1,4 @@
-# Deploy Cloud Pak for Data 3.5 (CP4D) on IBM Cloud ROKS OpenShift
+# Deploy Cloud Pak for Data 3.5 (CP4D) on IBM Cloud OpenShift (ROKS)
 
 ## Log in
 
