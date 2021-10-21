@@ -159,4 +159,8 @@ Run the following script to check the status of the control plane, and all the d
 ./statusall.sh
 ```
 
+## Uninstall
+
+TBA (full uninstall script is not verified)
+
 
