@@ -41,7 +41,7 @@ sed -i 's/enter_api_key/'"$entitlement_key"'/g' tune.sh
 ./cli.sh
 ```
 
-5. Update the default repo.yaml file by inserting your entitlement key. Ensure entitlement key variable is set properly with your key.
+5. Ensure entitlement key variable is set properly with your key.
 ```shell
 echo $entitlement_key
 ```
