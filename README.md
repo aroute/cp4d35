@@ -144,8 +144,9 @@ Resolution provided by IBM support.
 ```
 oc edit deployment/wd-discovery-ranker-monitor-agent
 ```
-a. Update the `initialDelaySeconds` value in `LivenessProbe` to `15`
-b. Update the `initialDelaySeconds` in `ReadinessProbe` to `45`
+1.1. Update the `initialDelaySeconds` value in `LivenessProbe` to `15`
+
+1.2. Update the `initialDelaySeconds` in `ReadinessProbe` to `45`
 
 2. How do I check the status of all the assemblies?
 
