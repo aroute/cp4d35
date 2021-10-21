@@ -41,9 +41,9 @@ sed -i 's/enter_api_key/'"$entitlement_key"'/g' tune.sh
 ./cli.sh
 ```
 
-5. Update the default repo.yaml file by inserting your entitlement key. Create a variable for your entitlement key.
+5. Update the default repo.yaml file by inserting your entitlement key. Ensure entitlement key variable is set properly with your key.
 ```shell
-export entitlement_key=eyJhbGcxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+echo $entitlement_key
 ```
 
 7. Populate your api key into `repocopy.yaml` file.
