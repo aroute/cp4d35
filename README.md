@@ -148,7 +148,11 @@ oc edit deployment/wd-discovery-ranker-monitor-agent
 
 1.2. Update the `initialDelaySeconds` in `ReadinessProbe` to `45`
 
+<br>
+
 2. How do I check the status of all the assemblies?
+
+### Resolution
 
 Run the following script to check the status of the control plane, and all the deployed assemblies.
 ```shell
