@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 ./cpd-cli adm --repo repo.yaml --assembly lite --namespace zen --arch x86_64 --verbose --accept-all-licenses
 ./cpd-cli adm --repo repo.yaml --assembly lite --namespace zen --arch x86_64 --verbose --accept-all-licenses --apply
 

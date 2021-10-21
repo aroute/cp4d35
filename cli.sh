@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 ## This pulls the CLI for Linux. If you are on Mac, replace the URL with Mac specific binary file.
 
 # curl -sLo /tmp/cpd-cli.tar.gz https://github.com/IBM/cpd-cli/releases/download/v3.5.4/cpd-cli-linux-EE-3.5.4.tgz

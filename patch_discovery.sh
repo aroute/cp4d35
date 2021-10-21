@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Type patch name as the first argument and dry-run as the second argument
 # Run the second time without dry-run.
 

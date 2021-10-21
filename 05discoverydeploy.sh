@@ -1,4 +1,7 @@
 #!/bin/bash
+
+set -e
+
 cat <<EOF >>discovery-override.yaml
 wdRelease:
   deploymentType: Development

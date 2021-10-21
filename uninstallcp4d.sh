@@ -1,11 +1,11 @@
 #!/bin/bash
 
-./cpd-cli --namespace zen --assembly watson-discovery --verbose
-./cpd-cli --namespace zen --assembly edb-operator --verbose
-./cpd-cli --namespace zen --assembly wsl --verbose
-./cpd-cli --namespace zen --assembly wml --verbose
-./cpd-cli --namespace zen --assembly db2wh --verbose
-./cpd-cli --namespace zen --assembly lite --verbose
+./cpd-cli uninstall --assembly watson-discovery --namespace zen --arch x86_64 --verbose
+./cpd-cli uninstall --assembly edb-operator --namespace zen --arch x86_64 --verbose
+./cpd-cli uninstall --assembly wsl --namespace zen --arch x86_64 --verbose
+./cpd-cli uninstall --assembly wml --namespace zen --arch x86_64 --verbose
+./cpd-cli uninstall --assembly db2wh --namespace zen --arch x86_64 --verbose
+./cpd-cli uninstall --assembly lite --namespace zen --arch x86_64 --verbose
 
 oc delete scc cpd-user-scc
 oc delete scc cpd-zensys-scc

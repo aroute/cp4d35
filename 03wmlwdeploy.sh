@@ -1,4 +1,7 @@
 #!/bin/bash
+
+set -e
+
 cd cpd-cli-workspace/
 rm -rf *
 cd ..
