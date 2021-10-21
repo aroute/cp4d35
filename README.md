@@ -136,7 +136,7 @@ Re-run and check to ensure patches have been applied.
 
 ## Troubleshooting
 
-1. The `wd-discovery-ranker-*` keeps failing.
+**1. The `wd-discovery-ranker-*` keeps failing.**
 
 ### Resolution
 
@@ -150,7 +150,7 @@ oc edit deployment/wd-discovery-ranker-monitor-agent
 
 <br>
 
-2. How do I check the status of all the assemblies?
+**2. How do I check the status of all the assemblies?**
 
 ### Resolution
 
