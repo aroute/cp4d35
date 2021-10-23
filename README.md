@@ -1,5 +1,7 @@
 # Deploy Cloud Pak for Data 3.5 (CP4D) on IBM Cloud OpenShift (ROKS)
 
+📌 Note: The following instructions should be run from a Linux operating system. 
+
 ## Log in
 
 1. Git clone this repository
@@ -108,6 +110,27 @@ export storageclass=managed-nfs-storage
 ```
 ⏰ 2+ hours.
 
+#### Log in
+
+Identify the default username and password via the official documentation (step 1) [here](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=tasks-setting-up-web-client).
+
+#### Create an API key and profile for the admin account
+
+📌 Note: The api key is necessary for the uninstallation of DB2 Warehouse (when needed). You may skip this step if you are not uninstalling DB2 Warehouse at this point in time.
+
+1. Using the CP4D web dashboard, create an API key for the admin account. Follow [this instruction](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=installing-creating-cpd-cli-profile).
+
+2. Create a profile for the admin account.
+```shell
+export ZENHOST=$(oc get route zen-cpd -n zen -o jsonpath='{.spec.host}')
+```
+```shell
+./cpd-cli config users set cpd-admin-user --username admin --apikey <your CP4D API key>
+```
+```shell
+./cpd-cli config profiles set cpd-admin-profile --user cpd-admin-user --url https://${ZENHOST}
+```
+
 ## Patches/upgrades
 
 At the time of the writing, only two of the assemblies require patches: `modeltrain-classic` and `watson-discovery`. 
@@ -161,6 +184,12 @@ Run the following script to check the status of the control plane, and all the d
 
 ## Uninstall
 
-TBA (full uninstall script is not verified)
+Ensure you have previously created an API key and a profile for the admin account (see above).
+
+1. Uninstall CP4D.
+```shell
+./uninstallcp4d.sh
+```
+
 
 
