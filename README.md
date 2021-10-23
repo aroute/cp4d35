@@ -191,5 +191,17 @@ Ensure you have previously created an API key and a profile for the admin accoun
 ./uninstallcp4d.sh
 ```
 
+2. If needed, troubleshoot stuck namespace.
+```shell
+oc get namespace zen -o json > tmp_zen.json
+```
+```shell
+vi tmp_zen.json 
+```
+Search for /finalizer - delete kubernetes line
+```shell
+oc replace --raw "/api/v1/namespaces/zen/finalize" -f ./tmp_zen.json
+```
+
 
 
