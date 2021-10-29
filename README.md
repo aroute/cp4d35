@@ -38,8 +38,6 @@ sed -i 's/enter_api_key/'"$entitlement_key"'/g' tune.sh
 ./tune.sh
 ```
 
-📌 Note: The following command pulls down the installer for Linux operating system. Do not run on any other operating system.
-
 4. Get `cpd-cli` utility.
 ```shell
 ./cli.sh
