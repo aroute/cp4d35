@@ -27,7 +27,7 @@ cd cp4d35/
 ./registry.sh
 ```
 
-3. Tune/optimize nodes and set NFS permissions. Get your entitlement key via [Container software library on My IBM](https://myibm.ibm.com/products-services/containerlibrary). Source: [Obtaining the installation files](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=tasks-obtaining-installation-files).
+3. Tune/optimize nodes and set NFS permissions. Get your entitlement key via [Container software library on My IBM](https://myibm.ibm.com/products-services/containerlibrary).<sup>1</sup>
 ```shell
 export entitlement_key=eyJhbGcxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
@@ -205,5 +205,7 @@ Search for /finalizer - delete kubernetes line
 oc replace --raw "/api/v1/namespaces/zen/finalize" -f ./tmp_zen.json
 ```
 
+#### References:
 
+<sup>1</sup> [IBM's Official Documentation: Obtaining the installation files](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=tasks-obtaining-installation-files).
 
