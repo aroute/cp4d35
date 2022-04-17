@@ -7,6 +7,7 @@ set -e
 # curl -sLo /tmp/cpd-cli.tar.gz https://github.com/IBM/cpd-cli/releases/download/v3.5.4/cpd-cli-linux-EE-3.5.4.tgz
 # curl -sLo /tmp/cpd-cli.tar.gz https://github.com/IBM/cpd-cli/releases/download/v3.5.6/cpd-cli-linux-EE-3.5.6.tgz
 # curl -sLo /tmp/cpd-cli.tar.gz https://github.com/IBM/cpd-cli/releases/download/v3.5.7/cpd-cli-linux-EE-3.5.7.tgz
-curl -sLo /tmp/cpd-cli.tar.gz https://github.com/IBM/cpd-cli/releases/download/v3.5.8/cpd-cli-linux-EE-3.5.8.tgz
+# curl -sLo /tmp/cpd-cli.tar.gz https://github.com/IBM/cpd-cli/releases/download/v3.5.8/cpd-cli-linux-EE-3.5.8.tgz
+curl -sLo /tmp/cpd-cli.tar.gz https://github.com/IBM/cpd-cli/releases/download/v3.5.9/cpd-cli-linux-EE-3.5.9.tgz
 tar xzvf /tmp/cpd-cli.tar.gz -C . 
 rm -rf /tmp/cpd-cli.tar.gz
