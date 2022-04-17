@@ -116,6 +116,9 @@ export storageclass=managed-nfs-storage
 
 Identify the default username and password via the official documentation (step 1) [here](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=tasks-setting-up-web-client).
 
+---
+**Update: April 2022** The following section has not been re-validated with the latest release. Do not perform any of these steps.
+
 #### Create an API key and profile for the admin account
 
 📌 Note: The api key is necessary for the uninstallation of DB2 Warehouse (when needed). You may skip this step if you are not uninstalling DB2 Warehouse at this point in time.
