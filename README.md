@@ -83,7 +83,7 @@ export storageclass=managed-nfs-storage
 ```shell
 ./01db2wdeploy.sh
 ```
-⏰ 30 minutes.
+⏰ 15 minutes.
 
 ### Watson Studio
 ```shell
