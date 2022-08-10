@@ -1,4 +1,6 @@
-# Deploy Cloud Pak for Data 3.5 (CP4D) on IBM Cloud OpenShift (ROKS)
+# Update: CP4D is now at major [4.5](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.5.x) release version. Below mentioned instructions are outdated. 
+
+## Deploy Cloud Pak for Data 3.5 (CP4D) on IBM Cloud OpenShift (ROKS)
 
 📌 Note: The following instructions should be run from a Linux operating system. 
 
